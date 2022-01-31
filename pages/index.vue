@@ -4,7 +4,7 @@
 
       <v-card>
         <v-card-title class="headline">
-          Picked List Vue.js
+          Pick List Vue.js
         </v-card-title>
         <div>
 
