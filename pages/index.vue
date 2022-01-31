@@ -3,20 +3,28 @@
     <v-col cols="12" sm="8" md="12">
 
       <v-card>
-        <v-card-title class="headline">
-          Pick List Vue.js
-        </v-card-title>
-        <div>
-
+        <div style="display: flex;justify-content: space-around;">
+          <PickListContainer v-model="languages"/>
         </div>
-
       </v-card>
     </v-col>
   </v-row>
 </template>
 
 <script>
+import PickListContainer from "../components/PickListContainer";
+import languages from '@/assets/languages.json'
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  components: {PickListContainer},
+  data() {
+    return {
+      languages: null
+    }
+  },
+  mounted() {
+    this.languages = [...languages]
+    console.log(this.languages)
+  }
 }
 </script>
