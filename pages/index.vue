@@ -6,10 +6,9 @@
         <v-card-title class="headline">
           Picked List Vue.js
         </v-card-title>
-        <v-card-text>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Accusantium aliquid cumque esse impedit iusto nisi nulla porro quisquam veniam voluptatum?
-        </v-card-text>
+        <div>
+
+        </div>
 
       </v-card>
     </v-col>

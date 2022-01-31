@@ -1,0 +1,68 @@
+@import "assets/variables";
+
+.checkbox-disabled {
+  background-color: $disabled-color;
+  border-color: $disabled-color;
+}
+
+.checkbox-checked {
+  content: url("assets/icons/check.svg");
+}
+
+.checkbox-remove-style {
+  content: url("assets/icons/minus.svg");
+}
+
+input[type="checkbox"] {
+  display: none;
+  &+label::before {
+    content: "";
+    padding-top: 2px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: bottom;
+    width: $input-size;
+    height: $input-size;
+    margin-right: 11px;
+    border: 2px solid $outline-color;
+    border-radius: $border-radius;
+  }
+
+  &+label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    user-select: none;
+  }
+  &:checked {
+    &+*::before {
+      @extend .checkbox-checked;
+      background: $checked-color;
+      border-color: $checked-color;
+    }
+
+    &[minus] {
+      &+*::before {
+        @extend .checkbox-disabled;
+        @extend .checkbox-remove-style;
+      }
+    }
+
+    &:disabled {
+      &+*::before {
+        @extend .checkbox-disabled;
+        @extend .checkbox-checked;
+      }
+      &[minus] {
+        & + *::before {
+          //@extend .disabled-checkbox;
+          @extend .checkbox-remove-style;
+        }
+      }
+    }
+  }
+
+
+}
+

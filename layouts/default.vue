@@ -45,12 +45,10 @@ export default {
         {
           icon: 'mdi-apps',
           title: 'Welcome',
-          to: '/'
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'Inspire',
-          to: '/inspire'
         }
       ],
       miniVariant: false,
@@ -61,3 +59,6 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+@import "assets/scss/main";
+</style>
