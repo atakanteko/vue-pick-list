@@ -1,0 +1,37 @@
+[
+  {
+    "id": "cvbxcdf123123",
+    "todo": "Learn Vue.js",
+    "compulsory": false,
+    "isSelected": false,
+    "selectStatus": false
+  },
+  {
+    "id":"cvbxcdf123533",
+    "todo":"Learn Go",
+    "compulsory":false,
+    "isSelected":false,
+    "selectStatus":false
+  },
+  {
+    "id":"cvbxcdf099876",
+    "todo":"HTML",
+    "compulsory":true,
+    "isSelected":true,
+    "selectStatus":true
+  },
+  {
+    "id":"cvvccdf109123",
+    "todo":"Vuetify.js",
+    "compulsory":false,
+    "isSelected":false,
+    "selectStatus":false
+  },
+  {
+    "id":"cvvcndf109393",
+    "todo":"CSS3",
+    "compulsory":true,
+    "isSelected":true,
+    "selectStatus":true
+  }
+]
