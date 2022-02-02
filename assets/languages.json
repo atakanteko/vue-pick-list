@@ -4,34 +4,34 @@
     "todo": "Learn Vue.js",
     "done": false,
     "isSelected": false,
-    "selectStatus": false
+    "currentStatus": false
   },
   {
     "id": "cvbxcdf123533",
     "todo": "Learn Go",
     "done": false,
     "isSelected": false,
-    "selectStatus": false
+    "currentStatus": false
   },
   {
     "id": "cvbxcdf099876",
     "todo": "HTML",
     "done": true,
     "isSelected": true,
-    "selectStatus": false
+    "currentStatus": true
   },
   {
     "id": "cvvccdf109123",
     "todo": "Vuetify.js",
     "done": false,
     "isSelected": false,
-    "selectStatus": false
+    "currentStatus": false
   },
   {
     "id": "cvvcndf109393",
     "todo": "CSS3",
     "done": true,
     "isSelected": true,
-    "selectStatus": false
+    "currentStatus": true
   }
 ]
