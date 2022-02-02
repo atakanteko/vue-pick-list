@@ -13,7 +13,7 @@
             @click="moveSelectedTodosRightCard"
             class="btn-mdl"
             style="color:black;margin-bottom:16px;position: relative"
-            :class="{'active':getNumberOfTodosThatIsSelectedInLeft,'pointer-events':getNumberOfTodosThatIsSelectedInRight}"
+            :class="{'active':getNumberOfTodosThatIsSelectedInLeft,'pointer-events':getNumberOfTodosThatIsSelectedInRight || !getNumberOfTodosThatIsSelectedInLeft}"
           >
             >
           </button>
@@ -23,7 +23,7 @@
             class="btn-mdl"
             style="position: relative;color:black"
             @click="moveSelectedTodosLeftCard"
-            :class="{'active':getNumberOfTodosThatIsSelectedInRight,'pointer-events':getNumberOfTodosThatIsSelectedInLeft}"
+            :class="{'active':getNumberOfTodosThatIsSelectedInRight,'pointer-events':getNumberOfTodosThatIsSelectedInLeft || !getNumberOfTodosThatIsSelectedInRight}"
           >
             <
           </button>
