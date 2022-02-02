@@ -19,12 +19,11 @@ export default {
   components: {PickListContainer},
   data() {
     return {
-      languages: null
+      languages: []
     }
   },
   mounted() {
     this.languages = [...languages]
-    console.log(this.languages)
   }
 }
 </script>

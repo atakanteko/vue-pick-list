@@ -2,36 +2,36 @@
   {
     "id": "cvbxcdf123123",
     "todo": "Learn Vue.js",
-    "compulsory": false,
+    "done": false,
     "isSelected": false,
     "selectStatus": false
   },
   {
-    "id":"cvbxcdf123533",
-    "todo":"Learn Go",
-    "compulsory":false,
-    "isSelected":false,
-    "selectStatus":false
+    "id": "cvbxcdf123533",
+    "todo": "Learn Go",
+    "done": false,
+    "isSelected": false,
+    "selectStatus": false
   },
   {
-    "id":"cvbxcdf099876",
-    "todo":"HTML",
-    "compulsory":true,
-    "isSelected":true,
-    "selectStatus":true
+    "id": "cvbxcdf099876",
+    "todo": "HTML",
+    "done": true,
+    "isSelected": true,
+    "selectStatus": false
   },
   {
-    "id":"cvvccdf109123",
-    "todo":"Vuetify.js",
-    "compulsory":false,
-    "isSelected":false,
-    "selectStatus":false
+    "id": "cvvccdf109123",
+    "todo": "Vuetify.js",
+    "done": false,
+    "isSelected": false,
+    "selectStatus": false
   },
   {
-    "id":"cvvcndf109393",
-    "todo":"CSS3",
-    "compulsory":true,
-    "isSelected":true,
-    "selectStatus":true
+    "id": "cvvcndf109393",
+    "todo": "CSS3",
+    "done": true,
+    "isSelected": true,
+    "selectStatus": false
   }
 ]

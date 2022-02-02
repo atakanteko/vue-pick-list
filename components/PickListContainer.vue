@@ -2,13 +2,14 @@
   <div class="d-flex justify-space-between">
   <v-row >
     <v-col style="max-width: 387px">
-      <PickList />
+      <PickList
+        :title="leftTitle"
+        v-model="getTodos"/>
     </v-col>
     <v-col class="col-1" style="max-width: 30px;margin:0 12px;">
       <div style="display: flex;flex-direction: column;align-items: center;margin-top: 371px">
         <div>
           <button
-            @click="moveSelectedItemsToRight"
             class="btn-mdl"
             style="color:black;margin-bottom:16px;position: relative">
             >
@@ -16,10 +17,8 @@
         </div>
         <div>
           <button
-            @click="moveSelectedItemsToLeft"
             class="btn-mdl"
             style="position: relative;color:black"
-            :class="{ active: getCurrentSelectedRightAttributesLength}"
           >
             <
           </button>
@@ -27,7 +26,9 @@
       </div>
     </v-col>
     <v-col style="width: 650px">
-      <PickList />
+      <PickList
+        :title="rightTitle"
+        v-model="getDoneTodos"/>
     </v-col>
   </v-row>
   </div>
@@ -42,6 +43,8 @@ export default {
   },
   data() {
     return {
+      leftTitle: 'Yapılacaklar',
+      rightTitle: 'Tamamlananlar',
     }
   },
   props: {
@@ -51,10 +54,10 @@ export default {
     },
   },
   computed: {
-    getAlreadySelectedTodos() {
+    getDoneTodos() {
       return this.value.filter(item => item.isSelected)
     },
-    getNotSelectedTodos() {
+    getTodos() {
       return this.value.filter(item => !item.isSelected)
     }
   },

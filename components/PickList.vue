@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Başlık</h1>
+    <h1>{{ title }}</h1>
 
     <div style="display: flex; align-items: center">
       <div class="checkbox-outer-box">
@@ -10,8 +10,11 @@
 
     <div class="mb-12 container-scrollable pr-2" style="padding-top: 14px">
       <div class="custom-scroll" style="color:black;max-height: 608px; overflow-y: auto; padding-top: 12px">
-        <div v-for="(item, index) in 100" :key="index" >
-        {{item}}
+        <div v-for="(item, index) in value" :key="index" :class="{'mb-4': index !== (value.length-1)}">
+            <input
+              :id="item.id"
+              type="checkbox">
+            <label :for="item.id">{{item.todo}}</label>
         </div>
       </div>
     </div>
@@ -21,6 +24,15 @@
 <script>
 export default {
   name: 'PickList',
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    value: {
+      type: Array,
+    }
+  },
 };
 </script>
 <style scoped lang="scss">
