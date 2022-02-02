@@ -10,6 +10,7 @@
       <div style="display: flex;flex-direction: column;align-items: center;margin-top: 371px">
         <div>
           <button
+            @click="moveSelectedTodosRightCard"
             class="btn-mdl"
             style="color:black;margin-bottom:16px;position: relative">
             >
@@ -19,6 +20,7 @@
           <button
             class="btn-mdl"
             style="position: relative;color:black"
+            @click="moveSelectedTodosLeftCard"
           >
             <
           </button>
@@ -52,6 +54,22 @@ export default {
       type: Array,
       default: []
     },
+  },
+  methods: {
+    moveSelectedTodosLeftCard() {
+      const todosSelectedByUser = this.value.filter(item => item.currentStatus && !item.done);
+      todosSelectedByUser.forEach(item => {
+        item.isSelected = false
+      })
+    },
+    moveSelectedTodosRightCard() {
+      console.log(this.value)
+      const todosSelectedByUser = this.value.filter(item => item.currentStatus);
+      console.log(todosSelectedByUser)
+      todosSelectedByUser.forEach(item => {
+        item.isSelected = true
+      })
+    }
   },
   computed: {
     getDoneTodos() {

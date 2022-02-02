@@ -10,10 +10,15 @@
 
     <div class="mb-12 container-scrollable pr-2" style="padding-top: 14px">
       <div class="custom-scroll" style="color:black;max-height: 608px; overflow-y: auto; padding-top: 12px">
-        <div v-for="(item, index) in value" :key="index" :class="{'mb-4': index !== (value.length-1)}">
+        <div v-for="(item, index) in value" :key="item.id" :class="{'mb-4': index !== (value.length-1)}">
             <input
               :id="item.id"
-              type="checkbox">
+              v-model="item.currentStatus"
+              type="checkbox"
+              :checked="item.done"
+              :disabled="item.done"
+              @change="toggleChecked"
+            >
             <label :for="item.id">{{item.todo}}</label>
         </div>
       </div>
@@ -22,6 +27,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'PickList',
   props: {
@@ -31,6 +37,11 @@ export default {
     },
     value: {
       type: Array,
+    }
+  },
+  methods: {
+    toggleChecked() {
+      console.log(this.value)
     }
   },
 };
