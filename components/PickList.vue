@@ -3,9 +3,17 @@
     <h1>{{ title }}</h1>
 
     <div style="display: flex; align-items: center">
-      <div class="checkbox-outer-box">
+      <div :class="{'checkbox-outer-box':getSelectedCheckboxCount===0,'checkbox-outer-wide-box':getSelectedCheckboxCount>0}">
+        <input :id="targetSide"
+               type="checkbox"
+               :checked="isAnyCheckBoxSelected"
+        >
+        <label :for="targetSide" v-if="getSelectedCheckboxCount===0"></label>
+        <label :for="targetSide" v-else-if="getSelectedCheckboxCount === value.filter(item => !item.done).length">Tümü Seçildi</label>
+        <label :for="targetSide" v-else>{{getSelectedCheckboxCount}} adet seçildi</label>
+
       </div>
-      <span style="line-height: normal;">Tümünü Kaldır</span>
+      <span style="line-height: normal;"> {{ isAnyCheckBoxSelected ? 'Tümünü Kaldır' : 'Tümünü Seç' }}</span>
     </div>
 
     <div class="mb-12 container-scrollable pr-2" style="padding-top: 14px">
@@ -31,6 +39,9 @@
 export default {
   name: 'PickList',
   props: {
+    targetSide: {
+      type: String
+    },
     title: {
       type: String,
       default: ''
@@ -44,9 +55,20 @@ export default {
       console.log(this.value)
     }
   },
+  computed: {
+    getSelectedCheckboxCount() {
+      return this.value.filter(item => item.currentStatus && !item.done).length
+    },
+    isAnyCheckBoxSelected() {
+      return this.value.some(item => item.currentStatus && !item.done);
+    },
+  },
 };
 </script>
 <style scoped lang="scss">
+label{
+  color: black;
+}
 .container-scrollable {
   /*padding-top: 26px;*/
   padding-left: 24px;
