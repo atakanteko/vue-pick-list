@@ -4,7 +4,8 @@
     <v-col style="max-width: 387px">
       <PickList
         :title="leftTitle"
-        v-model="getTodos"/>
+        v-model="getTodos"
+        targetSide="leftSide"/>
     </v-col>
     <v-col class="col-1" style="max-width: 30px;margin:0 12px;">
       <div style="display: flex;flex-direction: column;align-items: center;margin-top: 371px">
@@ -33,7 +34,8 @@
     <v-col style="width: 650px">
       <PickList
         :title="rightTitle"
-        v-model="getDoneTodos"/>
+        v-model="getDoneTodos"
+        targetSide="rightSide"/>
     </v-col>
   </v-row>
   </div>
