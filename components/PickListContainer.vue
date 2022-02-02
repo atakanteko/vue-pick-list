@@ -12,7 +12,9 @@
           <button
             @click="moveSelectedTodosRightCard"
             class="btn-mdl"
-            style="color:black;margin-bottom:16px;position: relative">
+            style="color:black;margin-bottom:16px;position: relative"
+            :class="{'active':getNumberOfTodosThatIsSelectedInLeft,'pointer-events':getNumberOfTodosThatIsSelectedInRight}"
+          >
             >
           </button>
         </div>
@@ -21,6 +23,7 @@
             class="btn-mdl"
             style="position: relative;color:black"
             @click="moveSelectedTodosLeftCard"
+            :class="{'active':getNumberOfTodosThatIsSelectedInRight,'pointer-events':getNumberOfTodosThatIsSelectedInLeft}"
           >
             <
           </button>
@@ -77,6 +80,12 @@ export default {
     },
     getTodos() {
       return this.value.filter(item => !item.isSelected)
+    },
+    getNumberOfTodosThatIsSelectedInLeft() {
+      return this.value.filter(item => item.currentStatus && !item.isSelected).length
+    },
+    getNumberOfTodosThatIsSelectedInRight() {
+      return this.value.filter(item => item.currentStatus && item.isSelected && !item.done).length
     }
   },
 };
@@ -88,5 +97,12 @@ export default {
   border-radius: 5px !important;
   border: 1px solid #EAEAEA !important;
   background-color: #FFFFFF;
+}
+.active{
+  background: #f7ca27;
+  border-color: #f7ca27;
+}
+.pointer-events{
+  pointer-events: none;
 }
 </style>
