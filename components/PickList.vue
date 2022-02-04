@@ -92,7 +92,7 @@ label{
 .checkbox-outer-box {
   width: 40px;
   height: 40px;
-  margin: 24px 8px 20px 16px;
+  margin: 24px 8px 20px 0px;
   padding: 7px;
   border-radius: 5px;
   border: solid 1px #eaeaea;
