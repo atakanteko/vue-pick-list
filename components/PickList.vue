@@ -7,6 +7,7 @@
         <input :id="targetSide"
                type="checkbox"
                :checked="isAnyCheckBoxSelected"
+               @change="selectAll($event)"
         >
         <label :for="targetSide" v-if="getSelectedCheckboxCount===0"></label>
         <label :for="targetSide" v-else-if="getSelectedCheckboxCount === value.filter(item => !item.done).length">Tümü Seçildi</label>
@@ -53,6 +54,13 @@ export default {
   methods: {
     toggleChecked() {
       console.log(this.value)
+    },
+    selectAll(event){
+      this.value.filter(item => {
+        if (!item.isMandatory) {
+          item.currentStatus = event.target.checked
+        }
+      })
     }
   },
   computed: {
