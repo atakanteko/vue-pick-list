@@ -27,7 +27,6 @@
               type="checkbox"
               :checked="item.done"
               :disabled="item.done || checkAnyBoxSelectedInLeftSide > 0 || checkAnyBoxSelectedInRightSide > 0"
-              @change="toggleChecked"
             >
             <label :for="item.id">{{item.todo}}</label>
         </div>
@@ -59,9 +58,6 @@ export default {
     }
   },
   methods: {
-    toggleChecked() {
-      console.log(this.value)
-    },
     selectAll(event){
       this.value.filter(item => {
         if (!item.done) {

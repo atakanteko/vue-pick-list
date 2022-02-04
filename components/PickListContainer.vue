@@ -75,9 +75,7 @@ export default {
       })
     },
     moveSelectedTodosRightCard() {
-      console.log(this.value)
       const todosSelectedByUser = this.value.filter(item => item.currentStatus);
-      console.log(todosSelectedByUser)
       todosSelectedByUser.forEach(item => {
         item.isSelected = true
       })
