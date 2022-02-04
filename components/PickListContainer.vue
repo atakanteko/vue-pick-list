@@ -5,7 +5,9 @@
       <PickList
         :title="leftTitle"
         v-model="getTodos"
-        targetSide="leftSide"/>
+        targetSide="leftSide"
+        :checkAnyBoxSelectedInRightSide="getNumberOfTodosThatIsSelectedInRight"
+      />
     </v-col>
     <v-col class="col-1" style="max-width: 30px;margin:0 12px;">
       <div style="display: flex;flex-direction: column;align-items: center;margin-top: 371px">
@@ -35,7 +37,9 @@
       <PickList
         :title="rightTitle"
         v-model="getDoneTodos"
-        targetSide="rightSide"/>
+        targetSide="rightSide"
+        :checkAnyBoxSelectedInLeftSide="getNumberOfTodosThatIsSelectedInLeft"
+      />
     </v-col>
   </v-row>
   </div>
@@ -61,6 +65,9 @@ export default {
     },
   },
   methods: {
+    isAnyCheckboxSelectedInLeftCard(){
+
+    },
     moveSelectedTodosLeftCard() {
       const todosSelectedByUser = this.value.filter(item => item.currentStatus && !item.done);
       todosSelectedByUser.forEach(item => {

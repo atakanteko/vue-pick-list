@@ -7,6 +7,7 @@
         <input :id="targetSide"
                type="checkbox"
                :checked="isAnyCheckBoxSelected"
+               :disabled="checkAnyBoxSelectedInLeftSide > 0 || checkAnyBoxSelectedInRightSide > 0"
                @change="selectAll($event)"
         >
         <label :for="targetSide" v-if="getSelectedCheckboxCount===0"></label>
@@ -25,7 +26,7 @@
               v-model="item.currentStatus"
               type="checkbox"
               :checked="item.done"
-              :disabled="item.done"
+              :disabled="item.done || checkAnyBoxSelectedInLeftSide > 0 || checkAnyBoxSelectedInRightSide > 0"
               @change="toggleChecked"
             >
             <label :for="item.id">{{item.todo}}</label>
@@ -49,6 +50,12 @@ export default {
     },
     value: {
       type: Array,
+    },
+    checkAnyBoxSelectedInLeftSide: {
+      type: Number,
+    },
+    checkAnyBoxSelectedInRightSide: {
+      type: Number,
     }
   },
   methods: {
@@ -57,7 +64,7 @@ export default {
     },
     selectAll(event){
       this.value.filter(item => {
-        if (!item.isMandatory) {
+        if (!item.done) {
           item.currentStatus = event.target.checked
         }
       })
