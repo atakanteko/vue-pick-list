@@ -1,14 +1,14 @@
 <template>
   <div class="d-flex justify-space-between">
-  <v-row >
-    <v-col style="max-width: 387px">
+  <div style="display: flex" >
+    <div style="width: 350px">
       <PickList
         :title="leftTitle"
         v-model="getTodos"
         targetSide="leftSide"
         :checkAnyBoxSelectedInRightSide="getNumberOfTodosThatIsSelectedInRight"
       />
-    </v-col>
+    </div>
     <v-col class="col-1" style="max-width: 30px;margin:0 12px;">
       <div style="display: flex;flex-direction: column;align-items: center;margin-top: 371px">
         <div>
@@ -33,15 +33,15 @@
         </div>
       </div>
     </v-col>
-    <v-col style="width: 650px">
+    <div style="width: 350px">
       <PickList
         :title="rightTitle"
         v-model="getDoneTodos"
         targetSide="rightSide"
         :checkAnyBoxSelectedInLeftSide="getNumberOfTodosThatIsSelectedInLeft"
       />
-    </v-col>
-  </v-row>
+    </div>
+  </div>
   </div>
 </template>
 
